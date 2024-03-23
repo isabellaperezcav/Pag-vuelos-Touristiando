@@ -1,0 +1,12 @@
+CREATE TABLE planViaje(
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> ciudad VARCHAR(255) NOT NULL,
+    -> id_vuelo INT,
+    -> id_hotel INT,
+    -> costo DECIMAL(10, 2) NOT NULL,
+    -> id_usuario INT,
+    -> usuario INT,
+    -> FOREIGN KEY (id_vuelo) REFERENCES vuelos(id),
+    -> FOREIGN KEY (id_hotel) REFERENCES hoteles(id),
+    -> FOREIGN KEY (id_usuario) REFERENCES usuarios(cedula)
+    -> );
