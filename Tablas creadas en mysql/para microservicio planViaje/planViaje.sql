@@ -4,5 +4,5 @@ CREATE TABLE planViaje(
     -> vuelo VARCHAR(255) NOT NULL,
     -> hotel VARCHAR(255) NOT NULL,
     -> costo DECIMAL(10, 2) NOT NULL,
-    -> usuario INT NOT NULL
+    -> usuario varchar(255) NOT NULL
     -> );
