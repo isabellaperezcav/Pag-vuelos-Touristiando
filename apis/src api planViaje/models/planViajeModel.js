@@ -15,7 +15,7 @@ async function crearfactura(orden) {
     const ciudad = orden.ciudad;
 
     const result = await connection.query('INSERT INTO planViaje (usuario, hotel, vuelo, costo, ciudad) VALUES (?, ?, ?, ?, ?)', [usuario, hotel, vuelo, costo, ciudad]);
-    return result;
+    return result[0];
 }
 
 async function traerfactura(id_factura) {
@@ -25,7 +25,7 @@ async function traerfactura(id_factura) {
 
 async function traerfacturas() {
     const result = await connection.query('SELECT * FROM planViaje');
-    return result;
+    return result[0];
 }
 
 module.exports = {

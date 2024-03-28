@@ -102,8 +102,8 @@ async function verificarDisponibilidad(items) {
             break;
         }
 
-        const cantidadHotelDisponible = responseHotel.data.capacidad - responseHotel.data.cantidad_ocupada;
-        const cantidadVueloDisponible = responseVuelo.data.capacidad - responseVuelo.data.cantidad_ocupada;
+        const cantidadHotelDisponible = responseHotel.data.capacidad 
+        const cantidadVueloDisponible = responseVuelo.data.capacidad 
 
         if (item.cantidad_hotel > cantidadHotelDisponible || item.cantidad_vuelo > cantidadVueloDisponible) {
             disponibilidad = false;
@@ -115,7 +115,7 @@ async function verificarDisponibilidad(items) {
 }
 
 
-// Función para disminuir la cantidad de unidades de los productos en el inventario
+// Función para disminuir la cantidad de unidades de los productos en el inventario de Hoteles y Vuelos
 async function actualizarInventario(items) {
     for (const item of items) {
         const responseHotel = await axios.get(`http://localhost:3002/hoteles/${item.id_hotel}`);
