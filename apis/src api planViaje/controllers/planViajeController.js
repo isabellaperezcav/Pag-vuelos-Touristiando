@@ -37,6 +37,7 @@ router.post('/', async (req, res) => {
     const responseUsuario = await axios.get(`http://localhost:3001/usuarios/${cedula}`);
     const nombreUsuario = responseUsuario.data.nombre;
     console.log(nombreUsuario);
+    const usuario = nombreUsuario || cedula;
 
     // Obtenemos el nombre del hotel y la ciudad
     const responseHotel = await axios.get(`http://localhost:3002/hoteles/${items[0].id_hotel}`);
@@ -50,7 +51,7 @@ router.post('/', async (req, res) => {
 
     // Creamos el objeto orden
     const orden = {
-        usuario: nombreUsuario,
+        usuario: usuario,
         ciudad: ciudadHotel,
         vuelo: nombreVuelo,
         hotel: nombreHotel,
